@@ -24,19 +24,19 @@ $(document).ready(function() {
 
     $('#login-button').click(function() {
         console.log('Logging In...');
-        document.cookie = 'logged=true;acc=' + $('#username').text();
+        console.log($('#username').text());
+        document.cookie = 'acc=' + $('#username').val();
         window.location.href = 'transactions.html';
     });
 
     $('.logout-action').click(function() {
-        document.cookie = 'logged' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         document.cookie = 'acc' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         window.location.href = 'index.html';
     });
 
-    console.log(getCookie('logged'));
+    console.log(getCookie('acc'));
 
-    if (getCookie('logged') == 'true') {
+    if (getCookie('acc') != null) {
         $('.login-link').hide();
         $('.logged-in').show();
     } else {
@@ -52,31 +52,21 @@ $(document).ready(function() {
     $.ajax({
         'url': 'http://localhost:8080/viewJointAccount?id=' + sha
     }).done(function(msg) {
-        let id = $('#acc-num').text() + ' ' + msg['id'];
+        let id = $('#acc-num').text() + ' ' + sha;
         let bal = $('#acc-bal').text() + ' $' + msg['balance'];
         $('#acc-num').text(id);
         $('#acc-bal').text(bal);
     });
 
-    $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=' + rm1
-    }).done(function(msg) {
-        let nick = msg['id'];
-        $('#members-list').append('<li>' + nick + '</li>');
-    });
+    $('#members-list').append('<li>' + rm1 + '</li>');
+    $('#members-list').append('<li>' + rm2 + '</li>');
 
-    $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=' + rm2
-    }).done(function(msg) {
-        let nick = msg['id'];
-        $('#members-list').append('<li>' + nick + '</li>');
-    });
-
+    console.log(document.cookie);
     $.ajax({
         'url': 'http://localhost:8080/viewJointAccount?id=' + getCookie('acc')
     }).done(function(msg) {
         console.log(msg);
-        let nick = msg['id'];
+        let nick = getCookie('acc');
         let bal = msg['balance'];
         $('#prof-acc-num').append(nick);
         $('#prof-acc-bal').append(bal);

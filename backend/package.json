@@ -16,6 +16,7 @@
     "url": "https://github.com/vthacks-vi-n2jz/vthacksvi/issues"
   },
   "dependencies": {
+    "node-persist": "^3.0.4",
     "request": "^2.87.0"
   },
   "homepage": "https://github.com/vthacks-vi-n2jz/vthacksvi#readme"

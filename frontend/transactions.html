@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/dark.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/light.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/bundle.js"></script>
     <meta charset="UTF-8">
     <title>Transactions</title>
@@ -20,9 +16,18 @@
         <div class="nav-bar col-sm-1">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link active">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item login-link">
+                    <a href="#" class="nav-link login-modal-open">Log In</a>
+                </li>
+                <li class="nav-item login-link">
+                    <a href="#" class="nav-link login-modal-open">Register</a>
+                </li>
+                <li class="nav-item logged-in">
+                    <a href="transactions.html" class="nav-link">Transactions</a>
+                </li>
+                <li class="nav-item logged-in">
                     <a href="#" class="nav-link logout-action">Log Out</a>
                 </li>
             </ul>
@@ -30,35 +35,28 @@
         <div class="content col-sm-8 container">
             <h2>Joint Account Details</h2>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6" id="acc-num">
                     Account Number:
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6" id="acc-type">
                     Account Type:
-                </div>
-                <div class="col-sm-4">
-                    Nickname:
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6" id="acc-nick">
+                    Nickname:
+                </div>
+                <div class="col-sm-6" id="acc-rew">
                     Rewards:
                 </div>
-                <div class="col-sm-4">
+            </div>
+            <div class="row">
+                <div class="col-sm-6" id="acc-bal">
                     Balance:
                 </div>
             </div>
             <br />
             <h2>History</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-
-                        </th>
-                    </tr>
-                </thead>
-            </table>
         </div>
     </div>
 </body>

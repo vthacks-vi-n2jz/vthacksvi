@@ -43,7 +43,7 @@ async function viewJointAccount(responseToBeSent, parameters) {
 }
 
 async function sentMoneyToMerchant(responseToBeSent, parameters) {
-    let amount = parameters.amount;
+    let amount = parseInt(parameters.amount);
     let members = parameters.members.split(",");
     let jointAccount = parameters.jointAccount;
     let merchantAccount = parameters.merchantAccount;
@@ -51,10 +51,6 @@ async function sentMoneyToMerchant(responseToBeSent, parameters) {
     for (let member of members) {
         await transfer(member, jointAccount, amount / members.length);
     }
-    console.log(await storage.getItem('RM1Account'));
-    console.log(await storage.getItem('RM2Account'));
-    console.log(await storage.getItem('JointAccount'));
-    console.log(await storage.getItem('MerchantAccount'));
     let transferConfirmation = await transfer(jointAccount, merchantAccount, amount);
     responseToBeSent.write(transferConfirmation);
     responseToBeSent.end();
@@ -63,8 +59,8 @@ async function sentMoneyToMerchant(responseToBeSent, parameters) {
 async function transfer(source, destination, amount) {
     let sourceBalance = await storage.getItem(source);
     let destBalance = await storage.getItem(destination);
-    await storage.setItem(source, JSON.stringify({"balance": JSON.parse(sourceBalance).balance - amount}));
-    await storage.setItem(destination, JSON.stringify({"balance": JSON.parse(destBalance).balance + amount}));
+    await storage.setItem(source, JSON.stringify({"balance": parseInt((JSON.parse(sourceBalance)).balance) - amount}));
+    await storage.setItem(destination, JSON.stringify({"balance": parseInt((JSON.parse(destBalance)).balance) + amount}));
     return "success!";
 }
 

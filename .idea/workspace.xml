@@ -7,6 +7,8 @@
       <change beforePath="$PROJECT_DIR$/frontend/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/transactions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/requestHandlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/requestHandlers.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,9 +19,70 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+  <component name="FUSProjectUsageTrigger">
+    <session id="-69621785">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="LICENSE" value="1" />
+          <entry key="gitignore" value="1" />
+          <entry key="js" value="5" />
+          <entry key="json" value="2" />
+          <entry key="md" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="5" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="12" />
+          <entry key="js" value="1766" />
+          <entry key="json" value="2" />
+          <entry key="md" value="138" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="1766" />
+          <entry key="Markdown" value="138" />
+          <entry key="PLAIN_TEXT" value="12" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
+=======
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/frontend/css/light.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -48,6 +111,10 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/transactions.html">
+=======
+        <entry file="file://$PROJECT_DIR$/frontend/package.json">
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+>>>>>>> master
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="520">
               <caret line="83" column="36" lean-forward="true" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
@@ -58,8 +125,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="333">
               <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="257">
+              <caret line="99" column="8" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="105">
+                <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+              </first_editor>
+              <second_editor />
+=======
+            <state relative-caret-position="407">
+              <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+>>>>>>> master
             </state>
           </provider>
         </entry>
@@ -84,6 +173,12 @@
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>console.log</find>
+    </findStrings>
+=======
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -97,6 +192,7 @@
     <replaceStrings>
       <replace />
     </replaceStrings>
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,8 +203,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/server/requestRouter.js" />
-        <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/server/requestHandlers.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/frontend/package.json" />
@@ -226,15 +322,31 @@
       <option name="presentableId" value="Default" />
       <updated>1550284185159</updated>
       <workItem from="1550284186430" duration="23000" />
+<<<<<<< HEAD
+      <workItem from="1550284223601" duration="10615000" />
+=======
       <workItem from="1550284223601" duration="7293000" />
+<<<<<<< HEAD
       <workItem from="1550340780363" duration="7577000" />
       <workItem from="1550356828153" duration="385000" />
       <workItem from="1550357309876" duration="1077000" />
+=======
+      <workItem from="1550340780363" duration="389000" />
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+>>>>>>> master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="16355000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="10638000" />
+=======
+    <option name="totallyTimeSpent" value="7705000" />
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+>>>>>>> master
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="925" extended-state="6" />
@@ -245,14 +357,23 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
+=======
       <window_info anchor="bottom" id="Version Control" order="8" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32830188" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32830188" />
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+>>>>>>> master
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -287,6 +408,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -294,6 +416,17 @@
             <caret line="2" selection-start-line="2" selection-end-line="2" />
           </first_editor>
           <second_editor />
+=======
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/web-ui/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-ui/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
@@ -325,6 +458,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/frontend/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -333,6 +467,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/profile.html">
+=======
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/requestRouter.js">
+=======
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+>>>>>>> master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
           <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
@@ -355,8 +514,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="333">
           <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="257">
+          <caret line="99" column="8" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+=======
+        <state relative-caret-position="407">
+          <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+>>>>>>> 3127d7d34df6082b98d7889242836f42a8d53b27
+>>>>>>> master
         </state>
       </provider>
     </entry>

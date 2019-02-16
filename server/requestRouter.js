@@ -3,12 +3,11 @@ function route(requestType, path, parameters, handle, response) {
         if (handle[path]) {
             handle[path](response, parameters);
         } else {
-            console.log("hi");
-            response.write("Fail.");
+            response.write("NO THIS DOESN'T WORK TURN THE FOK AROUND");
             response.end();
         }
     } else {
-        response.write("Fail.");
+        response.write("DON'T POST WE ONLY GET");
         response.end();
     }
 }

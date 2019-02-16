@@ -7,7 +7,6 @@ function createAccount(responseToBeSent, parameters) {
             key: "62c6d069e5f36d88f921796deb57a33d",
         }
     }, function (error, response, body) {
-        console.log(body);
         responseToBeSent.write(body);
         responseToBeSent.end();
     });

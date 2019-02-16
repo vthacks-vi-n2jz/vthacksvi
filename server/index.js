@@ -3,7 +3,7 @@ const requestRouter = require('./requestRouter');
 const requestHandler = require('./requestHandlers');
 
 const handle = {
-    go: requestHandler.createAccount,
+    createAccount: requestHandler.createAccount,
 };
 
 server.startServer(requestRouter.route, handle);

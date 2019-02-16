@@ -8,12 +8,15 @@ function startServer(route, handle) {
 
     function onRequest(request, response) {
         var requestUrl = url.parse(request.url);
-        const path = requestUrl.pathname.substring(1);
+        var path = requestUrl.pathname.substring(1);
         response.writeHead(200, {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
         });
         const parameters = querystring.parse(requestUrl.query);
+	console.log("PATH1: " + path);
+	path = path.substring(path.indexOf("/") + 1);
+	console.log("PATH2: " + path);
         var requestType = request.method;
         route(requestType, path, parameters, handle, response);
     }

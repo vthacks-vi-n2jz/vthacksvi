@@ -41,4 +41,11 @@ $(document).ready(function() {
         $('.login-link').show();
         $('.logout-link').hide();
     }
+
+    $.ajax({
+        'url': 'http://localhost:8080/viewJointAccount?id=5c675a07322fa06b6779453d'
+    }).done(function(msg) {
+        console.log('success');
+        console.log(msg);
+    });
 });

@@ -4,7 +4,8 @@
   "description": "Joint Expenses App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify web-ui/js/main.js -o web-ui/js/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,8 @@
     "url": "https://github.com/vthacks-vi-n2jz/vthacksvi/issues"
   },
   "dependencies": {
+    "browserify": "^16.2.3",
+    "handlebars": "^4.1.0",
     "request": "^2.87.0"
   },
   "homepage": "https://github.com/vthacks-vi-n2jz/vthacksvi#readme"

@@ -2,11 +2,66 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dark.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/bundle.js"></script>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
-
+    <div class="row">
+        <div class="nav-bar col-sm-1">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link login-modal-open">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link login-modal-open">Register</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content col-sm-8 container">
+            <h1>Lorem Ipsum</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed facilisis lacus, eu malesuada sem. Ut venenatis mi porttitor rhoncus fringilla. Ut dignissim tempus elit, sit amet rutrum mi tempor quis. Nullam blandit iaculis dui, sed dictum augue. Praesent feugiat mollis quam sit amet vulputate. Sed sodales et dolor nec tincidunt. Curabitur ut metus ultricies, euismod enim at, scelerisque augue. Aenean cursus arcu eu neque bibendum, a semper erat vestibulum. Phasellus eu velit non mauris maximus ultricies. Proin eget tortor consectetur, iaculis quam eu, vestibulum risus. Integer accumsan ac nibh in dignissim. Sed mattis auctor enim aliquet pretium. Nam pellentesque rhoncus libero, quis venenatis lorem malesuada a. Etiam non tincidunt lectus. Aenean a nunc porttitor, dignissim sapien id, facilisis elit.
+            </p>
+            <p>
+                Suspendisse laoreet sem id sem interdum efficitur. Nunc vestibulum dignissim arcu ut porta. Donec finibus cursus erat vitae efficitur. Sed varius semper aliquet. Nulla laoreet enim in dolor elementum aliquam. Integer vel vestibulum nisl, ut luctus tellus. Aliquam in elit quis odio volutpat dignissim. Ut pharetra fringilla ante, sit amet mattis leo. Sed metus neque, bibendum at felis vitae, pellentesque mattis nulla. Mauris et mauris venenatis, dictum tortor at, auctor quam. Nunc non eleifend purus, non lacinia justo.
+            </p>
+            <p>
+                Nulla dignissim bibendum turpis sed tempus. Vivamus lacinia justo quis orci ornare commodo. Duis pharetra tincidunt ante, vitae vehicula leo suscipit ut. Quisque rutrum sollicitudin metus, ac tristique neque. Nunc sed tortor velit. Morbi egestas dignissim tortor, sed dictum nisl blandit ut. Donec nec quam vitae ante pretium consectetur at sed lectus. Praesent magna nibh, ornare et quam quis, interdum imperdiet dolor.
+            </p>
+            <p>
+                In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla vestibulum molestie faucibus. Nullam felis ligula, fermentum non consectetur nec, molestie et tortor. Aenean ac odio ac purus facilisis lobortis. Sed augue dolor, faucibus tempus tempor id, placerat ac urna. Quisque mi ante, tristique sed aliquet ut, tempus non nisl. Aenean vitae turpis vehicula, posuere urna non, pellentesque ipsum. Proin auctor dolor sed ante dignissim aliquam. Aliquam feugiat turpis ipsum, non fringilla ante condimentum sagittis. Vestibulum pellentesque leo turpis, accumsan maximus turpis fringilla eu. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus efficitur neque id vehicula placerat. Nunc eget sapien eget nisl fermentum lacinia. Aliquam erat volutpat.
+            </p>
+            <p>
+                Nunc ac ultrices libero. Nullam sit amet fermentum nibh, tincidunt aliquet est. Nullam egestas vehicula sem, ac blandit lorem pulvinar sed. Aliquam vitae imperdiet ante, at maximus massa. Nam id massa sit amet velit malesuada imperdiet. Quisque dignissim quam eu ligula dictum consequat. Nunc semper condimentum nisl sit amet pharetra. Curabitur ac metus erat. In molestie est id est interdum, et pretium nulla blandit. In quis orci vitae enim eleifend pulvinar non eu metus. Donec nec metus ipsum. Maecenas quis purus risus. Mauris vel molestie turpis.
+            </p>
+        </div>
+    </div>
+    <div class="modal fade" id="login-modal" role="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="button" class="btn btn-primary" value="Log In">
+                            <input type="button" class="btn btn-secondary" value="Register">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -3,7 +3,7 @@ const requestRouter = require('./requestRouter');
 const requestHandler = require('./requestHandlers');
 
 const handle = {
-    createAccount: requestHandler.createAccount,
+    createJointAccount: requestHandler.createJointAccount,
     viewJointAccounts: requestHandler.viewJointAccounts,
     viewJointAccount: requestHandler.viewJointAccount,
     transferToJointAccount: requestHandler.transferToJointAccount,

@@ -1,143 +1,78 @@
 const request = require('request');
-const db = require('node-persist');
+const storage = require('node-persist');
 
-function createAccountSettings() {
-    let randomFixedInteger = function (length) {
-        return Math.floor(Math.pow(10, length - 1) + Math.random() * (Math.pow(10, length) - Math.pow(10, length - 1) - 1));
-    };
-    return {
-        "type": "Credit Card",
-        "nickname": "string",
-        "rewards": 0,
-        "balance": 0,
-        "account_number": "1234567891234567"
-    }
+
+async function setupStorage() {
+    await storage.init();
+    await storage.setItem('JointAccount', JSON.stringify({
+        'balance': 1000,
+    }));
+    await storage.setItem('RM1Account', JSON.stringify({
+        'balance': 1000,
+    }));
+    await storage.setItem('RM2Account', JSON.stringify({
+        'balance': 1000,
+    }));
+    await storage.setItem('MerchantAccount', JSON.stringify({
+        'balance': 1000,
+    }));
 }
 
+setupStorage();
 
-function createJointAccount(responseToBeSent, parameters) {
-    request.post({
-        url: `http://api.reimaginebanking.com/customers/5c675a06322fa06b6779453c/accounts`,
-        qs: {
-            key: "62c6d069e5f36d88f921796deb57a33d",
-        },
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            "type": "Credit Card",
-            "nickname": "Merchant Account",
-            "rewards": 0,
-            "balance": 10000,
-            "account_number": "1234567891234567"
-        })
-    }, function (error, response, body) {
-        console.log(body);
-        responseToBeSent.write(body);
-        responseToBeSent.end();
-    });
+
+async function createJointAccount(responseToBeSent, parameters) {
+    let id = parameters.id;
+    let balance = parameters.balance;
+    await storage.setItem(id, JSON.stringify({
+        'balance': parseInt(balance),
+    }));
+    responseToBeSent.write(JSON.stringify({
+        'id': id,
+        'balance': parseInt(balance),
+    }));
+    responseToBeSent.end();
 }
 
-// for our ease of dev
-function viewJointAccounts(responseToBeSent, parameters) {
-    request({
-        url: `http://api.reimaginebanking.com/customers/5c675a06322fa06b6779453c/accounts`,
-        qs: {
-            key: "62c6d069e5f36d88f921796deb57a33d",
-        },
-    }, function (error, response, body) {
-        console.log(body);
-        responseToBeSent.write(body);
-        responseToBeSent.end();
-    });
+async function viewJointAccount(responseToBeSent, parameters) {
+    let id = parameters.id;
+    let accountData = await storage.getItem(id);
+    console.log(accountData);
+    responseToBeSent.write(accountData);
+    responseToBeSent.end();
 }
 
-function viewJointAccount(responseToBeSent, parameters) {
-    if (parameters.id === undefined) {
-        responseToBeSent.write("bad customer id dude");
-        responseToBeSent.end();
-    }
-    request({
-        url: `http://api.reimaginebanking.com/accounts/${parameters.id}`,
-        qs: {
-            key: "62c6d069e5f36d88f921796deb57a33d",
-        },
-    }, function (error, response, body) {
-        console.log(body);
-        responseToBeSent.write(body);
-        responseToBeSent.end();
-    });
-}
-
-function jointAccountToMerchant(responseToBeSent, parameters) {
-    if (parameters.idsList === undefined || parameters.amount === undefined ||
-        parameters.jointAccountId === undefined || parameters.merchantAccountId === undefined) {
-        responseToBeSent.write("Need a list of ids and a valid amount and valid joint account id and a valid merchant id");
-        responseToBeSent.end();
-        return;
-    }
+async function sentMoneyToMerchant(responseToBeSent, parameters) {
+    let amount = parameters.amount;
+    let members = parameters.members.split(",");
+    let jointAccount = parameters.jointAccount;
+    let merchantAccount = parameters.merchantAccount;
     let transferPromises = [];
-    idsList = parameters.idsList.split(",");
-    amount = parseInt(parameters.amount);
-    idsList.forEach(function (id) {
-        transferPromises.push(new Promise(function (resolve) {
-            request.post({
-                url: `http://api.reimaginebanking.com/accounts/${id}/transfers`,
-                qs: {
-                    key: "62c6d069e5f36d88f921796deb57a33d",
-                },
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    "medium": "balance",
-                    "payee_id": parameters.jointAccountId,
-                    "transaction_date": (new Date()).toISOString().split('T')[0],
-                    "status": "pending",
-                    "description": "string",
-                    "amount": amount / idsList.length
-                })
-            }, function (error, response, body) {
-                resolve(body);
-            });
-        }));
+    members.forEach((member)=> {
+       transferPromises.push(transfer(member, jointAccount, amount / members.length));
     });
-    Promise.all(transferPromises).then(function (transferConfirmations) {
-        console.log(transferConfirmations.toString());
-        return transferConfirmations;
-    }).then(function (transferConfirmations) {
-        request.post({
-            url: `http://api.reimaginebanking.com/accounts/${parameters.jointAccountId}/transfers`,
-            qs: {
-                key: "62c6d069e5f36d88f921796deb57a33d",
-            },
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                "medium": "balance",
-                "payee_id": parameters.merchantAccountId,
-                "transaction_date": (new Date()).toISOString().split('T')[0],
-                "status": "pending",
-                "description": "string",
-                "amount": amount
-            })
-        }, function (error, response, jointToMerchantConfirmation) {
-            responseToBeSent.write(jointToMerchantConfirmation.toString());
-            responseToBeSent.end();
-        });
-    });
+    let transferConfirmations = await Promise.all(transferPromises);
+    let dog = await storage.getItem("JointAccount");
+    let transferConfirmation = await transfer(jointAccount, merchantAccount, amount);
+    responseToBeSent.write(transferConfirmation);
+    responseToBeSent.end();
 }
 
-function transferHistory(responseToBeSent, parameters) {
-    request({
-        url: `http://api.reimaginebanking.com/customers/5c675a06322fa06b6779453c/accounts`,
-        qs: {
-            key: "62c6d069e5f36d88f921796deb57a33d",
-        },
-    }, function (error, response, body) {
-        console.log(body);
-        responseToBeSent.write(body);
-        responseToBeSent.end();
-    });
+async function transfer(source, destination, amount) {
+    if (destination === "JointAccount" || source === "JointAccount") {
+        console.log("hi");
+    }
+    let sourceBalance = await storage.getItem(source);
+    let destBalance = await storage.getItem(destination);
+    await storage.setItem(source, JSON.parse(sourceBalance).balance - amount);
+    await storage.setItem(destination, JSON.parse(destBalance).balance + amount);
+    let bals1 = await storage.getItem("JointAccount");
+    return "success!";
 }
+
+
 
 
 exports.createJointAccount = createJointAccount;
-exports.viewJointAccounts = viewJointAccounts;
 exports.viewJointAccount = viewJointAccount;
-exports.jointAccountToMerchant = jointAccountToMerchant;
+exports.sendMoneyToMerchant = sentMoneyToMerchant;

@@ -4,8 +4,8 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/dark.css">
     <link rel="stylesheet" href="css/summary_graph.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
     <script type='text/javascript' src="js/summary_graph.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -17,25 +17,44 @@
     <link href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
     <script src="js/bundle.js"></script>
+    <script src="js/bundle.js"></script>
     <meta charset="UTF-8">
-    <title>Summary</title>
+    <title>SquadShare: Summary</title>
 </head>
 
-<body>
-    <div class="row">
-        <div class="nav-bar col-sm-1">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link logout-action">Log Out</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm-9 container">
-            <div class="ct-chart ct-golden-section"></div>
-        </div>
+<body class="no-sidebar is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header">
+
+            <!-- Logo -->
+            <h1><a href="index.html">SquadShare</a></h1>
+            <h2>Free, Secure Way To Share Expenses</h2>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li class="nav-item "><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item login-link"><a href="#" class="nav-link login-modal-open">Log In</a></li>
+                    <li class="nav-item login-link"><a href="#" class="nav-link login-modal-open">Register</a></li>
+                    <li class="nav-item logged-in"><a href="transactions.html" class="nav-link">Transactions</a></li>
+                    <li class="nav-item logged-in current"><a href="#" class="nav-link">Summary</a></li>
+                    <li class="nav-item logged-in"><a href="#" class="nav-link logout-action">Log Out</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- Main -->
+        <section id="main">
+            <div class="container">
+                <div class="col-sm-9 container">
+                    <h2>Recent Account Status</h2>
+                    <br />
+                    <div class="ct-chart ct-golden-section"></div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 

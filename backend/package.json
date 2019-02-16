@@ -4,8 +4,7 @@
   "description": "Joint Expenses App",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +16,6 @@
     "url": "https://github.com/vthacks-vi-n2jz/vthacksvi/issues"
   },
   "dependencies": {
-    "browserify": "^16.2.3",
-    "handlebars": "^4.1.0",
     "request": "^2.87.0"
   },
   "homepage": "https://github.com/vthacks-vi-n2jz/vthacksvi#readme"

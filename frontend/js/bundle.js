@@ -37,10 +37,10 @@ $(document).ready(function() {
 
     if (getCookie('logged') === 'true') {
         $('.login-link').hide();
-        $('.logout-link').show();
+        $('.logged-in').show();
     } else {
         $('.login-link').show();
-        $('.logout-link').hide();
+        $('.logged-in').hide();
     }
 
     $.ajax({
@@ -48,6 +48,16 @@ $(document).ready(function() {
     }).done(function(msg) {
         console.log('success');
         console.log(msg);
+        let id = $('#acc-num').text() + ' ' + msg['_id'];
+        let nick = $('#acc-nick').text() + ' ' + msg['nickname'];
+        let bal = $('#acc-bal').text() + ' ' + msg['balance'];
+        let rew = $('#acc-rew').text() + ' ' + msg['rewards'];
+        let type = $('#acc-type').text() + ' ' + msg['type'];
+        $('#acc-num').text(id);
+        $('#acc-nick').text(nick);
+        $('#acc-rew').text(rew);
+        $('#acc-bal').text(bal);
+        $('#acc-type').text(type);
     });
 });
 },{"handlebars":32}],2:[function(require,module,exports){

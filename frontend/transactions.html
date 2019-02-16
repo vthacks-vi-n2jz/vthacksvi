@@ -14,9 +14,18 @@
         <div class="nav-bar col-sm-1">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link active">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item login-link">
+                    <a href="#" class="nav-link login-modal-open">Log In</a>
+                </li>
+                <li class="nav-item login-link">
+                    <a href="#" class="nav-link login-modal-open">Register</a>
+                </li>
+                <li class="nav-item logged-in">
+                    <a href="transactions.html" class="nav-link">Transactions</a>
+                </li>
+                <li class="nav-item logged-in">
                     <a href="#" class="nav-link logout-action">Log Out</a>
                 </li>
             </ul>
@@ -24,21 +33,23 @@
         <div class="content col-sm-8 container">
             <h2>Joint Account Details</h2>
             <div class="row">
-                <div class="col-sm-4" id="acc-num">
+                <div class="col-sm-6" id="acc-num">
                     Account Number:
                 </div>
-                <div class="col-sm-4" id="acc-type">
+                <div class="col-sm-6" id="acc-type">
                     Account Type:
-                </div>
-                <div class="col-sm-4" id="acc-nick">
-                    Nickname:
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4" id="acc-rew">
+                <div class="col-sm-6" id="acc-nick">
+                    Nickname:
+                </div>
+                <div class="col-sm-6" id="acc-rew">
                     Rewards:
                 </div>
-                <div class="col-sm-4" id="acc-bal">
+            </div>
+            <div class="row">
+                <div class="col-sm-6" id="acc-bal">
                     Balance:
                 </div>
             </div>

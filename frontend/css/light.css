@@ -14,7 +14,7 @@ body {
     background-color: lightgray;
     height: 100vh;
     overflow: hidden;
-    min-width: 120px;
+    min-width: 140px;
 }
 
 a:hover {

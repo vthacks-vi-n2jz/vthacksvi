@@ -33,6 +33,8 @@ $(document).ready(function() {
         window.location.href = 'index.html';
     });
 
+    console.log(getCookie('logged'));
+
     if (getCookie('logged') === 'true') {
         $('.login-link').hide();
         $('.logged-in').show();

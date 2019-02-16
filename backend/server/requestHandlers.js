@@ -23,7 +23,7 @@ function createJointAccount(responseToBeSent, parameters) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             "type": "Credit Card",
-            "nickname": "string",
+            "nickname": "Joint Account",
             "rewards": 0,
             "balance": 0,
             "account_number": "1234567891234567"
@@ -67,24 +67,44 @@ function viewJointAccount(responseToBeSent, parameters) {
 }
 
 function transferToJointAccount(responseToBeSent, parameters) {
-    if (parameters.idsList === undefined || parameters.amount === undefined) {
-        responseToBeSent.write("Need a list of ids and a valid amount of moolah dudesky");
+    if (parameters.idsList === undefined || parameters.amount === undefined || parameters.jointAccountId === undefined) {
+        responseToBeSent.write("Need a list of ids and a valid amount and valid joint account id");
         responseToBeSent.end();
+        return;
     }
-    for (let id in parameters.idsList) {
-        let transferPromise = new Promise(function (resolve, reject) {
-            request({
-                url: `http://api.reimaginebanking.com/accounts/${parameters.id}/tra`,
+    let transferPromises = [];
+    idsList = parameters.idsList.split(",");
+    amount = parseInt(parameters.amount);
+    idsList.forEach(function (id) {
+        transferPromises.push(new Promise(function (resolve) {
+            request.post({
+                url: `http://api.reimaginebanking.com/accounts/${id}/transfers`,
                 qs: {
                     key: "62c6d069e5f36d88f921796deb57a33d",
                 },
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    "medium": "balance",
+                    "payee_id": parameters.jointAccountId,
+                    "transaction_date": (new Date()).toISOString().split('T')[0],
+                    "status": "pending",
+                    "description": "string",
+                    "amount": amount
+                })
             }, function (error, response, body) {
                 resolve(body);
             });
-        })
-    }
+        }));
+    });
+    Promise.all(transferPromises).then(function (bodies) {
+
+        console.log(bodies.toString());
+        responseToBeSent.write(bodies.toString());
+        responseToBeSent.end();
+    });
 }
 
 exports.createJointAccount = createJointAccount;
 exports.viewJointAccounts = viewJointAccounts;
 exports.viewJointAccount = viewJointAccount;
+exports.transferToJointAccount = transferToJointAccount;

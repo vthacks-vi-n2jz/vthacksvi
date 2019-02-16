@@ -14,9 +14,7 @@ function startServer(route, handle) {
             "Access-Control-Allow-Origin": "*",
         });
         const parameters = querystring.parse(requestUrl.query);
-	console.log("PATH1: " + path);
 	path = path.substring(path.indexOf("/") + 1);
-	console.log("PATH2: " + path);
         var requestType = request.method;
         route(requestType, path, parameters, handle, response);
     }

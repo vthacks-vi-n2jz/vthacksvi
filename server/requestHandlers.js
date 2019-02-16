@@ -12,5 +12,4 @@ function createAccount(responseToBeSent, parameters) {
     });
 }
 
-exports.getNearbyRestaurants = getNearbyRestaurants;
-exports.socketIoConnectionHandler = socketIoConnectionHandler;
+exports.createAccount = createAccount;

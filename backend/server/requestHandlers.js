@@ -23,7 +23,7 @@ function createJointAccount(responseToBeSent, parameters) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             "type": "Credit Card",
-            "nickname": "string",
+            "nickname": "Joint Account",
             "rewards": 0,
             "balance": 0,
             "account_number": "1234567891234567"

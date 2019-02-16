@@ -1,0 +1,30 @@
+body {
+    background-color: #3e4042;
+    color: white;
+    overflow-x: hidden;
+}
+
+.root {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
+    background-color: #303133;
+    height: 100vh;
+    overflow: hidden;
+    min-width: 120px;
+}
+
+a:hover {
+    color: lightgray;
+}
+
+.nav-link {
+    color: white;
+}
+
+.content {
+    padding: 15px;
+}

@@ -20,7 +20,6 @@ function getCookie(c_name) {
 
 $(document).ready(function() {
     $('.login-modal-open').click(function() {
-        console.log('Opening Login Modal');
         $('#login-modal').modal('toggle');
     });
 
@@ -43,14 +42,17 @@ $(document).ready(function() {
         $('.logged-in').hide();
     }
 
+    const sha = '5c685fb16759394351bec043';
+    const rm1 = '5c6860c06759394351bec048';
+    const rm2 = '5c6860c76759394351bec049';
+    const rm3 = '5c6860cd6759394351bec04a';
+
     $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=5c675a07322fa06b6779453d'
+        'url': 'http://localhost:8080/viewJointAccount?id=' + sha
     }).done(function(msg) {
-        console.log('success');
-        console.log(msg);
         let id = $('#acc-num').text() + ' ' + msg['_id'];
         let nick = $('#acc-nick').text() + ' ' + msg['nickname'];
-        let bal = $('#acc-bal').text() + ' ' + msg['balance'];
+        let bal = $('#acc-bal').text() + ' $' + msg['balance'];
         let rew = $('#acc-rew').text() + ' ' + msg['rewards'];
         let type = $('#acc-type').text() + ' ' + msg['type'];
         $('#acc-num').text(id);
@@ -58,6 +60,27 @@ $(document).ready(function() {
         $('#acc-rew').text(rew);
         $('#acc-bal').text(bal);
         $('#acc-type').text(type);
+    });
+
+    $.ajax({
+        'url': 'http://localhost:8080/viewJointAccount?id=' + rm1
+    }).done(function(msg) {
+        let nick = msg['nickname'];
+        $('#members-list').append('<li>' + nick + '</li>');
+    });
+
+    $.ajax({
+        'url': 'http://localhost:8080/viewJointAccount?id=' + rm2
+    }).done(function(msg) {
+        let nick = msg['nickname'];
+        $('#members-list').append('<li>' + nick + '</li>');
+    });
+
+    $.ajax({
+        'url': 'http://localhost:8080/viewJointAccount?id=' + rm3
+    }).done(function(msg) {
+        let nick = msg['nickname'];
+        $('#members-list').append('<li>' + nick + '</li>');
     });
 });
 },{"handlebars":32}],2:[function(require,module,exports){

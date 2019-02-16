@@ -4,6 +4,7 @@ const requestHandler = require('./requestHandlers');
 
 const handle = {
     createAccount: requestHandler.createAccount,
+    viewJointAccounts: requestHandler.viewJointAccounts,
 };
 
 server.startServer(requestRouter.route, handle);

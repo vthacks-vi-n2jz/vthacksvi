@@ -3,6 +3,7 @@ function route(requestType, path, parameters, handle, response) {
         if (handle[path]) {
             handle[path](response, parameters);
         } else {
+            console.log("hi");
             response.write("Fail.");
             response.end();
         }

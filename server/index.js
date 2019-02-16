@@ -3,7 +3,7 @@ const requestRouter = require('./requestRouter');
 const requestHandler = require('./requestHandlers');
 
 const handle = {
-    go: requestHandler.getNearbyRestaurants,
+    go: requestHandler.createAccount,
 };
 
 server.startServer(requestRouter.route, handle);

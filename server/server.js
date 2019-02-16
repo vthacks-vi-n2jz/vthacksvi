@@ -1,7 +1,6 @@
 const http = require('http');
 const url = require('url');
 const querystring = require('querystring');
-const socketIO = require('socket.io');
 const socketIOConnectionHandler = require('./requestHandlers').socketIoConnectionHandler;
 
 function startServer(route, handle) {

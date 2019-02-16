@@ -5,7 +5,6 @@ const socketIOConnectionHandler = require('./requestHandlers').socketIoConnectio
 
 function startServer(route, handle) {
     var server = http.createServer(onRequest);
-    var io = socketIO(server);
 
     function onRequest(request, response) {
         var requestUrl = url.parse(request.url);
@@ -18,9 +17,6 @@ function startServer(route, handle) {
         var requestType = request.method;
         route(requestType, path, parameters, handle, response);
     }
-    io.on('connection', function (socket) {
-        socketIOConnectionHandler(socket);
-    });
     server.listen(8080);
 }
 

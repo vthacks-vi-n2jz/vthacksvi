@@ -66,6 +66,25 @@ function viewJointAccount(responseToBeSent, parameters) {
     });
 }
 
+function transferToJointAccount(responseToBeSent, parameters) {
+    if (parameters.idsList === undefined || parameters.amount === undefined) {
+        responseToBeSent.write("Need a list of ids and a valid amount of moolah dudesky");
+        responseToBeSent.end();
+    }
+    for (let id in parameters.idsList) {
+        let transferPromise = new Promise(function (resolve, reject) {
+            request({
+                url: `http://api.reimaginebanking.com/accounts/${parameters.id}/tra`,
+                qs: {
+                    key: "62c6d069e5f36d88f921796deb57a33d",
+                },
+            }, function (error, response, body) {
+                resolve(body);
+            });
+        })
+    }
+}
+
 exports.createJointAccount = createJointAccount;
 exports.viewJointAccounts = viewJointAccounts;
 exports.viewJointAccount = viewJointAccount;

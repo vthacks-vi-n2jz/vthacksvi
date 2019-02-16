@@ -25,18 +25,19 @@ $(document).ready(function() {
 
     $('#login-button').click(function() {
         console.log('Logging In...');
-        document.cookie = 'logged=true';
+        console.log($('#username').text());
+        document.cookie = 'acc=' + $('#username').val();
         window.location.href = 'transactions.html';
     });
 
     $('.logout-action').click(function() {
-        document.cookie = 'logged=false';
+        document.cookie = 'acc' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         window.location.href = 'index.html';
     });
 
-    console.log(getCookie('logged'));
+    console.log(getCookie('acc'));
 
-    if (getCookie('logged') === 'true') {
+    if (getCookie('acc') != null) {
         $('.login-link').hide();
         $('.logged-in').show();
     } else {
@@ -44,45 +45,32 @@ $(document).ready(function() {
         $('.logged-in').hide();
     }
 
-    const sha = '5c685fb16759394351bec043';
-    const rm1 = '5c6860c06759394351bec048';
-    const rm2 = '5c6860c76759394351bec049';
-    const rm3 = '5c6860cd6759394351bec04a';
+    const sha = 'JointAccount';
+    const rm1 = 'RM1Account';
+    const rm2 = 'RM2Account';
+    const mer = 'MerchantAccount';
 
     $.ajax({
         'url': 'http://localhost:8080/viewJointAccount?id=' + sha
     }).done(function(msg) {
-        let id = $('#acc-num').text() + ' ' + msg['_id'];
-        let nick = $('#acc-nick').text() + ' ' + msg['nickname'];
+        let id = $('#acc-num').text() + ' ' + sha;
         let bal = $('#acc-bal').text() + ' $' + msg['balance'];
-        let rew = $('#acc-rew').text() + ' ' + msg['rewards'];
-        let type = $('#acc-type').text() + ' ' + msg['type'];
         $('#acc-num').text(id);
-        $('#acc-nick').text(nick);
-        $('#acc-rew').text(rew);
         $('#acc-bal').text(bal);
-        $('#acc-type').text(type);
     });
 
-    $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=' + rm1
-    }).done(function(msg) {
-        let nick = msg['nickname'];
-        $('#members-list').append('<li>' + nick + '</li>');
-    });
+    $('#members-list').append('<li>' + rm1 + '</li>');
+    $('#members-list').append('<li>' + rm2 + '</li>');
 
+    console.log(document.cookie);
     $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=' + rm2
+        'url': 'http://localhost:8080/viewJointAccount?id=' + getCookie('acc')
     }).done(function(msg) {
-        let nick = msg['nickname'];
-        $('#members-list').append('<li>' + nick + '</li>');
-    });
-
-    $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=' + rm3
-    }).done(function(msg) {
-        let nick = msg['nickname'];
-        $('#members-list').append('<li>' + nick + '</li>');
+        console.log(msg);
+        let nick = getCookie('acc');
+        let bal = msg['balance'];
+        $('#prof-acc-num').append(nick);
+        $('#prof-acc-bal').append(bal);
     });
 });
 },{"handlebars":32}],2:[function(require,module,exports){

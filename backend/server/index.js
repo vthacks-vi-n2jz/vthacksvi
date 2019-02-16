@@ -3,9 +3,9 @@ const requestRouter = require('./requestRouter');
 const requestHandler = require('./requestHandlers');
 
 const handle = {
-    createAccount: requestHandler.createAccount,
-    viewJointAccounts: requestHandler.viewJointAccounts,
+    createJointAccount: requestHandler.createJointAccount,
     viewJointAccount: requestHandler.viewJointAccount,
+    sendMoneyToMerchant: requestHandler.sendMoneyToMerchant,
 };
 
 server.startServer(requestRouter.route, handle);

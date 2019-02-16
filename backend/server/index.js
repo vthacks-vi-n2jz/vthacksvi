@@ -6,7 +6,7 @@ const handle = {
     createJointAccount: requestHandler.createJointAccount,
     viewJointAccounts: requestHandler.viewJointAccounts,
     viewJointAccount: requestHandler.viewJointAccount,
-    transferToJointAccount: requestHandler.transferToJointAccount,
+    jointAccountToMerchant: requestHandler.jointAccountToMerchant,
 };
 
 server.startServer(requestRouter.route, handle);

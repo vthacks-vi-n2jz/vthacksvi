@@ -12,24 +12,24 @@ function getCookie(c_name) {
         if (c_end == -1) {
             c_end = c_value.length;
         }
-        c_value = unescape(c_value.substring(c_start,c_end));
+        c_value = unescape(c_value.substring(c_start, c_end));
     }
     return c_value;
 }
 
-$(document).ready(function() {
-    $('.login-modal-open').click(function() {
+$(document).ready(function () {
+    $('.login-modal-open').click(function () {
         $('#login-modal').modal('toggle');
     });
 
-    $('#login-button').click(function() {
+    $('#login-button').click(function () {
         console.log('Logging In...');
         console.log($('#username').text());
         document.cookie = 'acc=' + $('#username').val();
         window.location.href = 'transactions.html';
     });
 
-    $('.logout-action').click(function() {
+    $('.logout-action').click(function () {
         document.cookie = 'acc' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         window.location.href = 'index.html';
     });
@@ -49,32 +49,47 @@ $(document).ready(function() {
 
     const endpoint = 'http://localhost:8080/';
 
-    $('#submit-transactions').click(function() {
+    $('#submit-transactions').click(function () {
         $.ajax({
             'url': endpoint + 'jointAccountToMerchant?amount=' + $('#transAmt').val() + '' +
                 '&idsList=' + rm1 + ',' + rm2 + '&jointAccountId=' + sha + '&merchantAccountId=' + mer
-        }).done(function(msg) {
+        }).done(function (msg) {
 
         });
     });
 
     $.ajax({
         'url': endpoint + 'viewJointAccount?id=' + sha
-    }).done(function(msg) {
+    }).done(function (msg) {
         let id = $('#acc-num').text() + ' ' + sha;
         let bal = $('#acc-bal').text() + ' $' + msg['balance'];
         $('#acc-num').text(id);
         $('#acc-bal').text(bal);
-    }).fail(function(msg) {
+    }).fail(function (msg) {
         console.dir(msg);
     });
 
-    $('#members-list').append('<li>' + rm1 + '</li>');
-    $('#members-list').append('<li>' + rm2 + '</li>');
+    $.ajax({
+        'url': endpoint + 'viewJointAccount?id=' + rm1
+    }).done(function (msg) {
+        let bal = $('#acc-bal').text() + ' $' + msg['balance'];
+        $('#members-list').append('<li>' + rm1 + ': $' + msg['balance'] + '</li>');
+    }).fail(function (msg) {
+        console.dir(msg);
+    });
+
+    $.ajax({
+        'url': endpoint + 'viewJointAccount?id=' + rm2
+    }).done(function (msg) {
+        let bal = $('#acc-bal').text() + ' $' + msg['balance'];
+        $('#members-list').append('<li>' + rm2 + ': $' + msg['balance'] + '</li>');
+    }).fail(function (msg) {
+        console.dir(msg);
+    });
 
     $.ajax({
         'url': endpoint + 'viewJointAccount?id=' + getCookie('acc')
-    }).done(function(msg) {
+    }).done(function (msg) {
         console.dir(msg);
         let nick = getCookie('acc');
         let bal = msg['balance'];

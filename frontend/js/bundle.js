@@ -49,19 +49,21 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        'url': 'https://vthacksvi.appspot.com/viewJointAccount?id=' + sha
+        'url': 'https://vthacksvi.appspot.com:8080/viewJointAccount?id=' + sha
     }).done(function(msg) {
         let id = $('#acc-num').text() + ' ' + sha;
         let bal = $('#acc-bal').text() + ' $' + msg['balance'];
         $('#acc-num').text(id);
         $('#acc-bal').text(bal);
+    }).fail(function(msg) {
+        console.log(msg);
     });
 
     $('#members-list').append('<li>' + rm1 + '</li>');
     $('#members-list').append('<li>' + rm2 + '</li>');
 
     $.ajax({
-        'url': 'https://vthacksvi.appspot.com/viewJointAccount?id=' + getCookie('acc')
+        'url': 'https://vthacksvi.appspot.com:8080/viewJointAccount?id=' + getCookie('acc')
     }).done(function(msg) {
         let nick = getCookie('acc');
         let bal = msg['balance'];

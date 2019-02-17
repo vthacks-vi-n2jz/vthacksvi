@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="css/summary_graph.css">
+    <script type='text/javascript' src="js/summary_graph.js"></script>
+    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -32,9 +37,7 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item login-link"><a href="#" class="nav-link login-modal-open">Log In</a></li>
                     <li class="nav-item login-link"><a href="#" class="nav-link login-modal-open">Register</a></li>
-                    <li class="nav-item logged-in current"><a href="#" class="nav-link active">Transactions</a></li>
-                    <li class="nav-item logged-in"><a href="profile.html" class="nav-link">Profile</a></li>
-                    <li class="nav-item logged-in"><a href="summary.html" class="nav-link">Summary</a></li>
+                    <li class="nav-item logged-in current"><a href="#" class="nav-link active">Dashboard</a></li>
                     <li class="nav-item logged-in"><a href="#" class="nav-link logout-action">Log Out</a></li>
                 </ul>
             </nav>
@@ -81,6 +84,11 @@
                                 value="Transfer from Joint Account">
                         </div>
                     </form>
+                </div>
+                <div class="col-sm-9 container">
+                    <h2>Recent Account Status</h2>
+                    <br />
+                    <div class="ct-chart ct-golden-section"></div>
                 </div>
             </div>
         </section>

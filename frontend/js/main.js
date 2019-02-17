@@ -34,10 +34,10 @@ $(document).ready(function() {
         window.location.href = 'index.html';
     });
 
-    const sha = 'JointAccount';
-    const rm1 = 'RM1Account';
-    const rm2 = 'RM2Account';
-    const mer = 'MerchantAccount';
+    const sha = '5c68f2f66759394351becff2';
+    const rm1 = '5c68f2da6759394351becff1';
+    const rm2 = '5c68f8be6759394351becffd';
+    const mer = '5c68f37f6759394351becff4';
 
     if (getCookie('acc') != null) {
         $('.login-link').hide();
@@ -47,23 +47,35 @@ $(document).ready(function() {
         $('.logged-in').hide();
     }
 
+    const endpoint = 'http://localhost:8080/';
+
+    $('#submit-transactions').click(function() {
+        $.ajax({
+            'url': endpoint + 'jointAccountToMerchant?amount=' + $('#transAmt').val() + '' +
+                '&idsList=' + rm1 + ',' + rm2 + '&jointAccountId=' + sha + '&merchantAccountId=' + mer
+        }).done(function(msg) {
+
+        });
+    });
+
     $.ajax({
-        'url': 'https://vthacksvi.appspot.com:8080/viewJointAccount?id=' + sha
+        'url': endpoint + 'viewJointAccount?id=' + sha
     }).done(function(msg) {
         let id = $('#acc-num').text() + ' ' + sha;
         let bal = $('#acc-bal').text() + ' $' + msg['balance'];
         $('#acc-num').text(id);
         $('#acc-bal').text(bal);
     }).fail(function(msg) {
-        console.log(msg);
+        console.dir(msg);
     });
 
     $('#members-list').append('<li>' + rm1 + '</li>');
     $('#members-list').append('<li>' + rm2 + '</li>');
 
     $.ajax({
-        'url': 'https://vthacksvi.appspot.com:8080/viewJointAccount?id=' + getCookie('acc')
+        'url': endpoint + 'viewJointAccount?id=' + getCookie('acc')
     }).done(function(msg) {
+        console.dir(msg);
         let nick = getCookie('acc');
         let bal = msg['balance'];
         $('#prof-acc-num').append(nick);

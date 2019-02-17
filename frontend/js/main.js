@@ -47,7 +47,7 @@ $(document).ready(function () {
         $('.logged-in').hide();
     }
 
-    const endpoint = 'http://localhost:8080/';
+    const endpoint = 'https://vthacksvi.appspot.com/backend/';
 
     $('#submit-transactions').click(function () {
         $.ajax({

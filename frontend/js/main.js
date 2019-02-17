@@ -69,23 +69,30 @@ $(document).ready(function () {
         console.dir(msg);
     });
 
-    $.ajax({
-        'url': endpoint + 'viewJointAccount?id=' + rm1
-    }).done(function (msg) {
-        let bal = $('#acc-bal').text() + ' $' + msg['balance'];
-        $('#members-list').append('<li>' + rm1 + ': $' + msg['balance'] + '</li>');
-    }).fail(function (msg) {
-        console.dir(msg);
-    });
-
-    $.ajax({
-        'url': endpoint + 'viewJointAccount?id=' + rm2
-    }).done(function (msg) {
-        let bal = $('#acc-bal').text() + ' $' + msg['balance'];
-        $('#members-list').append('<li>' + rm2 + ': $' + msg['balance'] + '</li>');
-    }).fail(function (msg) {
-        console.dir(msg);
-    });
+    (function fetchBalance() {
+        $.ajax({
+            'url': endpoint + 'viewJointAccount?id=' + rm1
+        }).then(function (msg) {
+            let oldBalanceListElem = document.getElementById("member1Balance");
+            if (oldBalanceListElem !== undefined && oldBalanceListElem !== null) {
+                oldBalanceListElem.remove();
+            }
+            let bal = $('#acc-bal').text() + ' $' + msg['balance'];
+            $('#members-list').append('<li id="member1Balance">' + rm1 + ': $' + msg['balance'] + '</li>');
+        }).then(
+            $.ajax({
+                'url': endpoint + 'viewJointAccount?id=' + rm2
+            }).then(function (msg) {
+                let oldBalanceListElem = document.getElementById("member2Balance");
+                if (oldBalanceListElem !== undefined && oldBalanceListElem !== null) {
+                    oldBalanceListElem.remove();
+                }
+                let bal = $('#acc-bal').text() + ' $' + msg['balance'];
+                $('#members-list').append('<li id="member2Balance">' + rm2 + ': $' + msg['balance'] + '</li>');
+                setTimeout(fetchBalance(), 5000);
+            })
+        );
+    })();
 
     $.ajax({
         'url': endpoint + 'viewJointAccount?id=' + getCookie('acc')

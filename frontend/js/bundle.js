@@ -40,15 +40,6 @@ $(document).ready(function() {
     const rm2 = 'RM2Account';
     const mer = 'MerchantAccount';
 
-    $('#submit-transactions').click(function() {
-        $.ajax({
-            'url': 'http://localhost:8080/sendMoneyToMerchant?amount=' + $('#transAmt').val() + '' +
-                '&members=' + rm1 + ',' + rm2 + '&jointAccount=' + sha + '&merchantAccount=' + mer
-        }).done(function(msg) {
-
-        });
-    });
-
     if (getCookie('acc') != null) {
         $('.login-link').hide();
         $('.logged-in').show();
@@ -58,7 +49,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=' + sha
+        'url': 'https://vthacksvi.appspot.com/viewJointAccount?id=' + sha
     }).done(function(msg) {
         let id = $('#acc-num').text() + ' ' + sha;
         let bal = $('#acc-bal').text() + ' $' + msg['balance'];
@@ -70,7 +61,7 @@ $(document).ready(function() {
     $('#members-list').append('<li>' + rm2 + '</li>');
 
     $.ajax({
-        'url': 'http://localhost:8080/viewJointAccount?id=' + getCookie('acc')
+        'url': 'https://vthacksvi.appspot.com/viewJointAccount?id=' + getCookie('acc')
     }).done(function(msg) {
         let nick = getCookie('acc');
         let bal = msg['balance'];

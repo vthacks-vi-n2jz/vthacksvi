@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e98d717-c1ac-466e-a233-7aa442f65cca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.node-persist/storage/2bd29d2b6e8b35cda88e41d8e3488e75" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.node-persist/storage/2bd29d2b6e8b35cda88e41d8e3488e75" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.node-persist/storage/7b913bc5077c35263a9ba47448d31739" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.node-persist/storage/7b913bc5077c35263a9ba47448d31739" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.node-persist/storage/a0096abafdae28e4db7b377cc9a675a7" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.node-persist/storage/a0096abafdae28e4db7b377cc9a675a7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.node-persist/storage/b9718f5247966a01ec21914e3676f412" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.node-persist/storage/b9718f5247966a01ec21914e3676f412" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/transactions.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backend/node_modules/" />
@@ -34,10 +33,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
+            <state relative-caret-position="146">
+              <caret line="39" column="106" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/about-us.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
               <caret line="37" column="107" selection-start-line="37" selection-start-column="107" selection-end-line="37" selection-end-column="107" />
             </state>
           </provider>
@@ -46,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+            <state relative-caret-position="214">
+              <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -55,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="107" />
+            <state relative-caret-position="316">
+              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="106" />
             </state>
           </provider>
         </entry>
@@ -64,17 +72,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/transactions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+            <state relative-caret-position="112">
+              <caret line="68" column="100" selection-start-line="68" selection-start-column="92" selection-end-line="68" selection-end-column="100" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+            <state relative-caret-position="282">
+              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -82,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/bundle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -105,11 +113,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/js/main.js" />
         <option value="$PROJECT_DIR$/frontend/summary.html" />
+        <option value="$PROJECT_DIR$/frontend/about-us.html" />
         <option value="$PROJECT_DIR$/frontend/profile.html" />
-        <option value="$PROJECT_DIR$/frontend/transactions.html" />
         <option value="$PROJECT_DIR$/frontend/index.html" />
+        <option value="$PROJECT_DIR$/frontend/transactions.html" />
+        <option value="$PROJECT_DIR$/frontend/js/main.js" />
       </list>
     </option>
   </component>
@@ -192,12 +201,12 @@
       <workItem from="1550340780363" duration="7577000" />
       <workItem from="1550356828153" duration="385000" />
       <workItem from="1550357309876" duration="1830000" />
-      <workItem from="1550359734740" duration="833000" />
+      <workItem from="1550359734740" duration="1788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="986000" />
+    <option name="totallyTimeSpent" value="1941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="925" extended-state="6" />
@@ -290,43 +299,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/transactions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+        <state relative-caret-position="221">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="107" />
+        <state relative-caret-position="316">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="106" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="146">
+          <caret line="39" column="106" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/about-us.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
           <caret line="37" column="107" selection-start-line="37" selection-start-column="107" selection-end-line="37" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/transactions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="68" column="100" selection-start-line="68" selection-start-column="92" selection-end-line="68" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
         </state>
       </provider>
     </entry>

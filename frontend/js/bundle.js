@@ -35,7 +35,19 @@ $(document).ready(function() {
         window.location.href = 'index.html';
     });
 
-    console.log(getCookie('acc'));
+    const sha = 'JointAccount';
+    const rm1 = 'RM1Account';
+    const rm2 = 'RM2Account';
+    const mer = 'MerchantAccount';
+
+    $('#submit-transactions').click(function() {
+        $.ajax({
+            'url': 'http://localhost:8080/sendMoneyToMerchant?amount=' + $('#transAmt').val() + '' +
+                '&members=' + rm1 + ',' + rm2 + '&jointAccount=' + sha + '&merchantAccount=' + mer
+        }).done(function(msg) {
+
+        });
+    });
 
     if (getCookie('acc') != null) {
         $('.login-link').hide();
@@ -44,11 +56,6 @@ $(document).ready(function() {
         $('.login-link').show();
         $('.logged-in').hide();
     }
-
-    const sha = 'JointAccount';
-    const rm1 = 'RM1Account';
-    const rm2 = 'RM2Account';
-    const mer = 'MerchantAccount';
 
     $.ajax({
         'url': 'http://localhost:8080/viewJointAccount?id=' + sha
@@ -62,11 +69,9 @@ $(document).ready(function() {
     $('#members-list').append('<li>' + rm1 + '</li>');
     $('#members-list').append('<li>' + rm2 + '</li>');
 
-    console.log(document.cookie);
     $.ajax({
         'url': 'http://localhost:8080/viewJointAccount?id=' + getCookie('acc')
     }).done(function(msg) {
-        console.log(msg);
         let nick = getCookie('acc');
         let bal = msg['balance'];
         $('#prof-acc-num').append(nick);
